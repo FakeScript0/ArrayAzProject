@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width:1250px) {
+    .main{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+    .image{
+        order:2;
+        width: 50%;
+    }
+
+    .login{
+        width: 38%;
+        height: 100%;
+        order: 1;
+    }
+}
+
+.container{
+    margin: auto;
+    
+    @media screen and (min-width:574px) {
+        width: 60%;
+    }
+}
+
+main{
+    padding: 121px 15px;
+}
+.image{
+
+    & img{
+        width: 100%;
+
+    }
+}
+
+.login{
+
+
+    & .text{
+        & img{
+            width: 200px;
+            height: auto;
+
+        }
+        & .txtandimg{
+            display: flex;
+            align-items: center;
+
+            
+        }
+        & p:first-child{
+            font-size: 24px;
+
+            & span{
+                font-weight: 500;
+                font-size: 32px;
+            }
+        }
+
+        & p:last-child{
+            color: #b3b3b3;
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+    }
+
+
+    & form{
+        display: flex;
+        flex-direction: column;
+
+        & button{
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: #4dcc67;
+            font-size: 20px;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 24px 0px ;
+        }
+
+        & .pass{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & .remember{
+                display: flex;
+                align-items: center;
+
+                & input{
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                    accent-color: #4dcc67;
+
+                }
+            }
+
+        }
+
+        & .input{
+            display: flex;
+            position: relative;
+
+            & i{
+
+                cursor: pointer;
+            }
+        }
+
+    }
+
+}
+
+button p{
+    font-size: 24px;
+}
+
+.focused {
+    font-size:24px ;
+    background: transparent;
+    margin: 0px 0px 10px ;
+    padding: 20px 0px 15px;
+    outline: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.input label {
+    color: #b3b3b3;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .6s ease-in-out;
+}
+
+.focused:valid+label {
+
+    font-size: 14px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.pass{
+    margin: 10px 0px;
+    & a{
+        color: #b3b3b3;
+    }
+}
+
+.signway .icons{
+    display: flex;
+    margin-top: 24px;
+    & i{
+        color: #fff;
+        margin-right: 10px;
+        padding: 20px 22px;
+        border-radius: 30px;
+    }
+
+    & i:first-child{
+        background: #3b5998;
+    }
+    & i:nth-child(2){
+        background: #000;
+    }
+    & i:last-child{
+        background: #ea4335;
+    }
+}
+
+
+
+
+
+
+.input {
+    position: relative;
+    & img{
+        filter: green;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5px;
+        width: 25px;
+        height: 25px;}
+
+}

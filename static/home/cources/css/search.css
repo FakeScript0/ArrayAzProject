@@ -1,0 +1,32 @@
+/* Arama kutusu ve düğme stilini özelleştir */
+.input-text {
+  border-radius: 25px; /* Yuvarlatılmış köşeler */
+  padding: 10px 40px 10px 20px; /* İç içe geçme alanı (sağdan genişletilmiş) */
+  border: 2px solid #ccc; /* Kenarlık */
+  font-size: 16px; /* Yazı tipi boyutu */
+}
+
+.btn-search {
+  border-radius: 25px; /* Yuvarlatılmış köşeler */
+  padding: 10px 20px; /* İç içe geçme alanı */
+  font-size: 18px; /* Yazı tipi boyutu */
+  background-color: #ffc107; /* Arka plan rengi */
+  color: #fff; /* Metin rengi */
+  border: 2px solid #ffc107; /* Kenarlık rengi */
+  transition: background-color 0.3s ease-in-out; /* Düğme üzerine gelince geçiş efekti */
+  position: relative; /* İç içe geçme alanı ayarları için konumlandırma ekler */
+}
+
+/* Arama simgesi için stil */
+.search-icon {
+  position: absolute; /* Diğer içeriğin üzerine bindirme */
+  right: 15px; /* Sağdan boşluk ekler */
+  top: 50%; /* Dikey hizalama */
+  transform: translateY(-50%); /* Dikey hizalama */
+}
+
+.btn-search:hover {
+  background-color: #ff9900; /* Düğme üzerine gelince arka plan rengini değiştir */
+  border: 2px solid #ff9900; /* Düğme üzerine gelince kenarlık rengini değiştir */
+  color: #fff; /* Metin rengini değiştir */
+}

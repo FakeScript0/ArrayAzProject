@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="{% static 'home/contact.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        html {
+            background-color: #e8e8e8;
+        }
+        body {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="contact" class="contact-area section-padding">
+        <div class="container">										
+            <div class="section-title text-center">
+                <h1>Bizimle Elaqe Qur.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim. Aenean vitae metus in augue pretium ultrices.</p>
+            </div>					
+            <div class="row">
+                <div class="col-lg-7">	
+                    <div class="contact">
+                        <form class="form" name="enq" method="post" onsubmit="return validation();">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="firstname" class="form-control" placeholder="Name" required="required">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!--- END COL --> 
+                <div class="col-lg-5">
+                    <div class="single_address">
+                        <i class="fa fa-map-marker"></i>
+                        <h4>Our Address</h4>
+                        <p>Azerbaycan</p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-envelope"></i>
+                        <h4>Send your message</h4>
+                        <p>bedellinicat123@gmail.com</p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-phone"></i>
+                        <h4>Bize Zeng</h4>
+                        <p>(+994) 55 999 88 77</p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-clock-o"></i>
+                        <h4>Work Time</h4>
+                        <p>Mon - Fri: 08.00 - 16.00. <br>Sat: 10.00 - 14.00</p>
+                    </div>					
+                </div><!--- END COL --> 
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->	
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

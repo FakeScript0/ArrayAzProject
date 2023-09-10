@@ -21,4 +21,21 @@ def loginpage(request):
 def logoutpage(request):
     logout(request)
     return redirect(loginpage)
+def registerpage(request):
+    if request.method=="POST":
+        username=request.POST["username"]
+        email=request.POST["email"]
+        password=request.POST["password"]
+        confirm=request.POST["confirm"]
+        if password !=confirm:
+            return render(request,"register.html")
+        check=authenticate(email=email)
+        if check is None:
+            user=User(email=email,username=username)
+            user.set_password(password)
+            user.save()
+            return redirect(loginpage)
+    return render(request,"authentication/register.html")
+def cources(request):
+    return render(request,"cources.html")
 # Create your views here.

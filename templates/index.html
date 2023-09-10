@@ -1,5 +1,45 @@
-{% extends "layout.html" %}
-{% block body %}
-<h2>{{request.user.username}}</h2>
-{% endblock body %}
-
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Array</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/register">Qeydiyyat</a></li>
+                <li><a href="/login">Giris Et</a></li>
+                <li><a href="{% url 'cources' %}">Kurslar</a></li>
+                <li><a href="{% url 'about' %}">Haqqımızda</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Udemy Benzeri Eğitim Platformu</h1>
+            <p>Online eğitim platformumuza hoş geldiniz. Binlerce kurs arasından seçim yapın ve öğrenmeye başlayın.</p>
+            <a href="{% url 'cources' %}" class="btn">Kurslara Göz At</a>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Array.az</h3>
+                <p>Azerbaycan'ın ilk ve tek profesyonel kurs sayfası</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2023 Array.az. Tüm haqqlariniz Gizlidir.</p>
+    </footer>
+</body>
+</html>

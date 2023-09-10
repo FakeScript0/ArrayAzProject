@@ -1,0 +1,160 @@
+/* Temel Stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+/* Diğer stiller buraya ekleyin */
+
+/* Diğer stiller buraya ekleyin */
+
+/* Footer stillemesi */
+footer {
+    background-color: #333; /* Arka plan rengini değiştirin */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.footer-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Telif hakkı stillemesi */
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* "Kurslara Göz At" butonu stillemesi */
+.btn {
+    background-color: #4CAF50; /* Yeşil arka plan rengi */
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px; /* Yuvarlak köşeler */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Hover durumunda daha koyu yeşil */
+    transform: scale(1.05); /* Büyüme efekti */
+}
+body {
+    background-color: #3498db; /* Mavi bir arka plan rengi */
+    background-image: linear-gradient(135deg, #3498db 0%, #c0392b 100%); /* Arka plan için gradyan */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Sayfa yazı tipi */
+    color: #fff; /* Sayfa metin rengi */
+}
+/* Navbar stillemesi */
+header nav {
+    background-color: #333; /* Navbar arka plan rengi */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header li {
+    margin: 0 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff; /* Metin rengi */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Geçiş efekti */
+}
+
+header a:hover {
+    color: #3498db; /* Hover durumunda farklı bir renk */
+}

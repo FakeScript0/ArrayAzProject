@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.core.mail import EmailMultiAlternatives
 def index(request):
     return render(request,"index.html")
 def contact(request):
@@ -14,12 +17,21 @@ def contact(request):
         subject=request.POST["subject"]
         message=request.POST["message"]
         subject1= subject
-        message1= message
-        email_from = settings.EMAIL_HOST_USER
+        html_message= render_to_string('email_template.html', {'context_variable': message})
+        plain_message=strip_tags(html_message)
+        message1= EmailMultiAlternatives(
+            subject=subject,
+            body=plain_message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[email,]
+        )
+        message1.attach_alternative(html_message,"text/html")
+        message1.send()
+    """ email_from = settings.EMAIL_HOST_USER
         recipient_list = [email, ]
         send_mail( subject1, message1, email_from, recipient_list )
         messages.success(request,"Mesajiniz Ugurla gonderildi")
-        return redirect("index")
+        return redirect("index")"""
     return render(request,"contact.html")
 login_required
 def cources(request):
@@ -57,7 +69,7 @@ def registerpage(request):
             user=User(email=email,username=username)
             user.set_password(password)
             user.save()
-            messages.success(request,"Qeydiyyat Ugurlu Kecdi,Giris Et")
+            messages.success(request,"Qeydiyyat Ugurlu Kecdi,Giris Et!")
             return redirect(loginpage)
     return render(request,"authentication/register.html")
 

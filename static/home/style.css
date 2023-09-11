@@ -10,6 +10,18 @@ header {
     color: #fff;
     padding: 1rem 0;
 }
+.user-info {
+    float: right; /* Sağa kaydır */
+    margin-top: 10px; /* Üst boşluk ekleyin */
+    margin-right: 20px; /* Sağ boşluk ekleyin */
+}
+
+.user-info-text {
+    color: #fff; /* Metin rengi */
+    font-weight: bold; /* Kalın yazı tipi */
+    /* Diğer stil ayarları */
+}
+
 
 nav ul {
     list-style: none;

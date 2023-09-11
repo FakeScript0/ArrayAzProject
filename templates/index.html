@@ -12,13 +12,31 @@
     
     <header>
         <nav>
+          
             <ul>
+                
+                {% if not request.user.is_authenticated %}
                 <li><a href="/register">Qeydiyyat</a></li>
                 <li><a href="/login">Giris Et</a></li>
+                {% else %}
+                {% if request.user.is_superuser %}
+                <li><a href="/admin">Admin</a></li>
+               
+                {% endif %}
+                <li><a href="/logout">Cixis Et</a></li>
+                {% endif %}
                 <li><a href="{% url 'cources' %}">Kurslar</a></li>
                 <li><a href="{% url 'about' %}">Haqqımızda</a></li>
                 <li><a href="{% url 'contact' %}">İletişim</a></li>
+                {% if request.user.is_authenticated %}
+                <div class="user-info">
+                    <li><a href ="{% url 'profile' %}">Sayın {{ request.user.username }}</a></li>
+                </div>
+                {% endif %}
+                
+              
             </ul>
+            
         </nav>
     </header>
     <main>

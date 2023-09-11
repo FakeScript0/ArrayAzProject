@@ -8,8 +8,28 @@ from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
+def logout_required(view_func):
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            # Eğer kullanıcı oturum açmışsa, belirlediğiniz bir yönlendirmeye yönlendirin.
+            messages.info(request,"Bu seyfeye Getmek Ucun Giris Etmelisiniz")
+            return redirect("index")
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+def logreg_required(view_func):
+    def _wrapped_view(request, *args, **kwargs):
+        if request.user.is_authenticated:
+            # Eğer kullanıcı oturum açmışsa, belirlediğiniz bir yönlendirmeye yönlendirin.
+            messages.info(request,"Siz Giris Etmisiniz,Bu Seyfeni Goruntulemek Ucun Cixis Edin")
+            return redirect("index")
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 def index(request):
     return render(request,"index.html")
+@login_required(login_url="authentication/login.html")
+def profile(request):
+    return render(request,"authentication/profile.html")
 def contact(request):
     if request.method == "POST":
         firstname=request.POST["firstname"]
@@ -38,6 +58,7 @@ def cources(request):
     return render(request,"cources.html")
 def about(request):
     return render(request,"about.html")
+@logreg_required
 def loginpage(request):
     if request.method=="POST":
         username=request.POST["username"]
@@ -51,9 +72,11 @@ def loginpage(request):
             messages.warning(request,"Giris Ugursuz")
             return redirect("loginpage")
     return render(request, "authentication/login.html")
+@logout_required
 def logoutpage(request):
     logout(request)
-    return redirect(loginpage)
+    return redirect("index")
+@logreg_required
 def registerpage(request):
     if request.method=="POST":
         username=request.POST["username"]
@@ -72,5 +95,6 @@ def registerpage(request):
             messages.success(request,"Qeydiyyat Ugurlu Kecdi,Giris Et!")
             return redirect(loginpage)
     return render(request,"authentication/register.html")
-
+def courcesadd(request):
+    return render(request,"courcesadd.html")
 # Create your views here.

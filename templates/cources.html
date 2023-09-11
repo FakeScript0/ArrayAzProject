@@ -19,6 +19,32 @@
     <link href="{% static 'home/cources/css/search.css' %}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{% static 'home/cources/css/album.css' %}" rel="stylesheet">
+
+    <style>
+      .btn-kurs-ekle {
+        background-color: transparent; /* Arka planı şeffaf yap */
+        color: #FFD700; /* Sarı rengi ayarla */
+        border: 2px solid #FFD700; /* Sarı kenarlık oluştur */
+        padding: 15px 30px; /* Dolgu ayarla */
+        border-radius: 10px; /* Köşeleri yuvarla */
+        font-size: 20px; /* Yazı boyutunu ayarla */
+        cursor: pointer; /* İmleci işaretçi yap */
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Arka plan rengi ve yazı rengi değişimini yumuşat */
+    }
+
+    /* Kurs Ekle düğmesinin üzerine gelindiğinde stilini ayarlıyoruz */
+    .btn-kurs-ekle:hover {
+        background-color: #FFD700; /* Arka plan rengini sarı yap */
+        color: #FFFFFF; /* Yazı rengini beyaz yap */
+    }
+
+    /* Kurs Ekle düğmesine tıklandığında stilini ayarlıyoruz */
+    .btn-kurs-ekle:active {
+        background-color: #FFA500; /* Daha koyu bir renk değişikliği */
+        color: #FFFFFF; /* Yazı rengini beyaz yap */
+    }
+  </style>
+
   </head>
 
   <body>
@@ -60,6 +86,10 @@
       <section class="jumbotron text-center">
         
         <div class="container">
+          <a href="{% url 'cource:courceadd' %}"><button  class="btn-kurs-ekle">Yeni Kurs Elave Et</button></a>
+          
+          <hr>
+          <br>
           <h1 class="jumbotron-heading">Array.az </h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <div class="container justify-content-center">

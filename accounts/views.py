@@ -4,6 +4,7 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from .forms import ProductForm
+from .models import Product
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.template.loader import render_to_string
@@ -56,7 +57,8 @@ def contact(request):
     return render(request,"contact.html")
 login_required
 def cources(request):
-    return render(request,"cources.html")
+    products=Product.objects.all()
+    return render(request,"cources.html",{"products":products})
 def about(request):
     return render(request,"about.html")
 @logreg_required

@@ -21,6 +21,14 @@ header {
     font-weight: bold; /* Kalın yazı tipi */
     /* Diğer stil ayarları */
 }
+.card {
+    height: 100%; /* Kartların yüksekliğini sabitler */
+}
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Resimleri kırpmak için */
+}
 
 
 nav ul {

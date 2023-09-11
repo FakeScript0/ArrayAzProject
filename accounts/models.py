@@ -19,7 +19,7 @@ class Product(models.Model):
     CONTENT=(
         ("informatics lessons","informatika dersleri"),
         ("Backend lessons","Backend derlseri"),
-        ("Frontend lessons","Backend derlseri"),
+        ("Frontend lessons","FrontEnd derlseri"),
         ("Fullstack lessons","Fullstack derlseri"),
         ("Electonics lessons","Elektonika dersleri"),
         ("Python lessons","Python dersleri"),

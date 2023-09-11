@@ -25,11 +25,13 @@ class Product(models.Model):
         ("Python lessons","Python dersleri"),
     )
     title=models.CharField(verbose_name="title",max_length=60)  
+    teachers = models.ForeignKey(Teacher, on_delete=models.SET_NULL,null=True) 
     content=models.TextField(verbose_name="content",choices=CONTENT)
     price=models.FloatField(verbose_name="Tedris Qiymeti",default=0)
     description=models.TextField(verbose_name="Info",null=True)
     category=models.CharField(verbose_name="Kateqoriya",choices=CATEGORY,null=True,max_length=60)
     created_date=models.DateTimeField(auto_now_add=True)
+    product_image=models.ImageField(null=False,upload_to="images/",default=None)
     def __str__(self) -> str:
         return self.title
 
@@ -40,7 +42,7 @@ class Order(models.Model):
         ("isn't taught","Tədris Olunmur"),
         ("will be taught","Tədris Olunacaq"),
     )
-    teachers = models.ForeignKey(Teacher, on_delete=models.SET_NULL,null=True) 
+    
     products=models.ForeignKey(Product, on_delete=models.SET_NULL,null=True) 
     status=models.CharField(null=True,verbose_name="Hal Hazirda",choices=STATUS,max_length=60)
     

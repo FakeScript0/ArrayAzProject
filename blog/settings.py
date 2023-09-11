@@ -134,6 +134,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "bedellinicat123@gmail.com"
 EMAIL_HOST_PASSWORD ="hbvbncoxcxkwcdcb"
 
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
 

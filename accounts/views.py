@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from .forms import ProductForm
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.template.loader import render_to_string
@@ -96,5 +97,10 @@ def registerpage(request):
             return redirect(loginpage)
     return render(request,"authentication/register.html")
 def courcesadd(request):
-    return render(request,"courcesadd.html")
+    form=ProductForm(request.POST,request.FILES)
+    if request.method=="POST":
+        if form.is_valid():
+            form.save()
+            return redirect("index")
+    return render(request,"courcesadd.html",{"form":form})
 # Create your views here.

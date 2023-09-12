@@ -1,0 +1,13 @@
+/* Resmi küçült */
+.custom-image {
+    width: 50%; /* Resmi yarı genişlikte yapar */
+    max-height: 250px; /* Maksimum yükseklik ayarı */
+    object-fit: contain; /* Resmi sıkıştırma yerine içine sığdırır */
+    float: left; /* Resmi sola yaslar */
+    margin-right: 10px; /* Resmin sağ tarafındaki boşluğu ayarlar */
+}
+
+/* Metni resmin sağ tarafına al */
+.text-container {
+    overflow: hidden; /* Metni resmin dışına taşan kısmı gizler */
+}

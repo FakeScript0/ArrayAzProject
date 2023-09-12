@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     "crispy_forms",
+    'profileapp',
     "crispy_bootstrap4",
 
 ]
@@ -57,6 +58,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 ROOT_URLCONF = 'blog.urls'
+LOGIN_URL = 'loginpage'
 
 TEMPLATES = [
     {

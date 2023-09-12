@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+<h6>Photo Add</h6>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+{{form.profile_photo}}
+<button class="btn btn-primary" type ="submit">Elave Et</button>
+</form>
+{% endblock body %}

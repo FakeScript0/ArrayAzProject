@@ -1,6 +1,9 @@
 from django.db import models
 
 
+
+
+
 class Teacher(models.Model):
     name=models.CharField(verbose_name="Ad Soyad",max_length=50)
     email=models.EmailField(verbose_name="email",max_length=70)
@@ -12,7 +15,7 @@ class Teacher(models.Model):
 
 class Product(models.Model):
     CATEGORY=(
-        ("object","Əyani"),
+        ("qiyabi","Əyani"),
         ("online","Online")  
 
     )

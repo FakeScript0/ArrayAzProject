@@ -1,4 +1,104 @@
-{% extends "layout.html" %}
-{% block body %}
-<h2>,SJND,JS</h2>
-{% endblock body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array.az Kurslar</title>
+    <style>
+        /* Sayfa Arka Planı */
+        html, body {
+            background-color: #f0e8d5; /* Sayfa arka plan rengi */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border-radius: 10px; /* Köşeleri yuvarlat */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navbar Başlık */
+        .navbar h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+
+        /* Kurs Kartları */
+        .course-card {
+            background-color: #f5f2e7; /* Bej arka plan rengi */
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: calc(33.33% - 20px); /* 3 sütunlu düzen için */
+            box-sizing: border-box;
+        }
+
+        /* İçerik Sıralama */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* İçeriği ortala */
+            padding: 20px;
+        }
+
+        /* Sayfa Düzeni */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Konteynır */
+        .container {
+            max-width: 1200px; /* Maksimum genişlik */
+            margin: 0 auto; /* Sayfayı ortala */
+        }
+
+        /* Kartların Altını Beyaz Yap */
+        .course-card:hover {
+            background-color: white; /* Kartın altını beyaz yap */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Konteyneri -->
+    <div class="container">
+        <!-- Navbar -->
+        <br>
+        <div class="navbar">
+            <h1>array.az Kurslar</h1>
+        </div>
+        <br>
+        
+    </div>
+
+    <!-- Ana Konteyner -->
+    <div class="container">
+        <!-- Kurs Kartları -->
+        <div class="content">
+            <div class="course-card">
+                <h2>Kurs Başlığı 1</h2>
+                <p>Kurs açıklaması burada yer alacak.</p>
+                <button>Detaylar</button>
+            </div>
+            <div class="course-card">
+                <h2>Kurs Başlığı 2</h2>
+                <p>Kurs açıklaması burada yer alacak.</p>
+                <button>Detaylar</button>
+            </div>
+            <div class="course-card">
+                <h2>Kurs Başlığı 3</h2>
+                <p>Kurs açıklaması burada yer alacak.</p>
+                <button>Detaylar</button>
+            </div>
+            <!-- Daha fazla kurs kartı ekleyebilirsiniz -->
+        </div>
+    </div>
+</body>
+</html>
